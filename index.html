@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoveNutty — Nutritious Snacks</title>
+    <meta
+      name="description"
+      content="LoveNutty creates wholesome nut snacks, bars, and spreads made with clean ingredients and bold flavor."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a href="#top" class="logo" aria-label="LoveNutty home">
+          <span class="logo-mark">✦</span>
+          <span class="logo-text">LoveNutty</span>
+        </a>
+
+        <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="#subscribe" class="btn btn-small">Subscribe</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">Crafted with care • Naturally delicious</p>
+            <h1>Nut snacks that fuel your day.</h1>
+            <p>
+              We blend roasted nuts, seeds, and fruit into clean-label snacks that are
+              rich in flavor and made for everyday energy.
+            </p>
+            <div class="hero-actions">
+              <a href="#products" class="btn">Explore Products</a>
+              <a href="#about" class="btn btn-ghost">Our Story</a>
+            </div>
+          </div>
+
+          <div class="hero-card" role="img" aria-label="Assorted premium nut snacks">
+            <div class="chip">100% plant-based</div>
+            <h3>Small batches, big taste</h3>
+            <p>
+              Carefully sourced ingredients. No artificial flavors. Balanced texture in
+              every bite.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="products" id="products">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Our lineup</p>
+            <h2>Find your favorite crunch</h2>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <h3>Nut Bars</h3>
+              <p>Roasted almonds, honey, and cacao nibs in a chewy-crunchy bite.</p>
+              <a href="#contact">View details →</a>
+            </article>
+            <article class="product-card">
+              <h3>Nut Nougat</h3>
+              <p>Soft nougat layered with pistachio and hazelnut for a rich finish.</p>
+              <a href="#contact">View details →</a>
+            </article>
+            <article class="product-card">
+              <h3>Peanut Bars</h3>
+              <p>Classic roasted peanut flavor with sea salt and golden syrup.</p>
+              <a href="#contact">View details →</a>
+            </article>
+            <article class="product-card">
+              <h3>Sesame Halva</h3>
+              <p>Velvety sesame halva with a delicate sweetness and toasted aroma.</p>
+              <a href="#contact">View details →</a>
+            </article>
+            <article class="product-card">
+              <h3>Hazelnut Butter</h3>
+              <p>Ultra-smooth spread with two ingredients only: hazelnuts and cocoa.</p>
+              <a href="#contact">View details →</a>
+            </article>
+            <article class="product-card">
+              <h3>Power Mix</h3>
+              <p>Portable packs of nuts, berries, and seeds for active routines.</p>
+              <a href="#contact">View details →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container about-grid">
+          <div>
+            <p class="eyebrow">About LoveNutty</p>
+            <h2>Built around real ingredients and honest taste.</h2>
+            <p>
+              We started LoveNutty to make better snack options with fewer ingredients
+              and fuller flavor. Every recipe is tested in-house and produced in small
+              batches for consistent quality.
+            </p>
+            <ul class="feature-list">
+              <li>No artificial colors or preservatives</li>
+              <li>Balanced sweetness and natural texture</li>
+              <li>Made for daily snacking and gifting</li>
+            </ul>
+          </div>
+          <aside class="about-highlight">
+            <h3>Why customers choose us</h3>
+            <p>
+              Thoughtful sourcing, transparent labels, and flavors that keep people
+              coming back.
+            </p>
+            <div class="stats">
+              <div><strong>15+</strong><span>Signature products</span></div>
+              <div><strong>98%</strong><span>Positive reviews</span></div>
+              <div><strong>7</strong><span>Local partner farms</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container contact-grid">
+          <div>
+            <p class="eyebrow">Get in touch</p>
+            <h2>Let’s talk products and partnerships.</h2>
+            <p>
+              Reach us by phone, email, or send a quick message below and we’ll reply
+              shortly.
+            </p>
+            <div class="contact-lines">
+              <a href="tel:+359123456789">+359 123 456 789</a>
+              <a href="mailto:hello@lovenutty.com">hello@lovenutty.com</a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form">
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <button type="submit" class="btn">Send Message</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="subscribe" id="subscribe">
+        <div class="container subscribe-wrap">
+          <div>
+            <p class="eyebrow">Newsletter</p>
+            <h2>Get new launches first.</h2>
+          </div>
+          <form class="subscribe-form" id="subscribe-form">
+            <input type="email" name="email" placeholder="Your email" required />
+            <button type="submit" class="btn btn-dark">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> LoveNutty. All rights reserved.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
