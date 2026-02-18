@@ -1,185 +1,370 @@
 <!doctype html>
-<html lang="en">
+<html lang="bg">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LoveNutty — Nutritious Snacks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Love Nutty — The Hazelnut Farm</title>
     <meta
       name="description"
-      content="LoveNutty creates wholesome nut snacks, bars, and spreads made with clean ingredients and bold flavor."
+      content="Love Nutty и The Hazelnut Farm — модерни био продукти от лешници, без компромис в качеството."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
     <header class="site-header" id="top">
       <div class="container nav-wrap">
-        <a href="#top" class="logo" aria-label="LoveNutty home">
-          <span class="logo-mark">✦</span>
-          <span class="logo-text">LoveNutty</span>
+        <a href="#top" class="logo-group" aria-label="Love Nutty home">
+          <span class="logo-main">THE HAZELNUT FARM</span>
+          <span class="logo-sub">House of Healthy Foods</span>
         </a>
 
-        <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">
+        <button class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Отвори меню">
           <span></span><span></span><span></span>
         </button>
 
-        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-          <a href="#products">Products</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <a href="#subscribe" class="btn btn-small">Subscribe</a>
+        <nav id="site-nav" class="site-nav" aria-label="Основна навигация">
+          <a href="#about">За нас</a>
+          <a href="#farm">Фермата</a>
+          <a href="#products">Продукти</a>
+          <a href="#bio">Bio стандарт</a>
+          <a href="#brands">Брандове</a>
+          <a href="#contact" class="btn btn-small">Контакт</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero premium-hero">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="orb orb-1"></span>
+          <span class="orb orb-2"></span>
+          <span class="orb orb-3"></span>
+        </div>
         <div class="container hero-grid">
-          <div class="hero-content">
-            <p class="eyebrow">Crafted with care • Naturally delicious</p>
-            <h1>Nut snacks that fuel your day.</h1>
+          <div class="hero-text reveal">
+            <p class="eyebrow">Love Nutty • 2026 premium bio identity</p>
+            <h1><span class="gradient-text">Луксозна био визия</span> за лешникова ферма от ново поколение.</h1>
             <p>
-              We blend roasted nuts, seeds, and fruit into clean-label snacks that are
-              rich in flavor and made for everyday energy.
+              Продукти с чисти съставки, ясно проследяване и модерна презентация,
+              създадени за ритейл, export и клиенти, които търсят качество с характер.
             </p>
+            <div class="hero-tags">
+              <span>100% Quality</span>
+              <span>No GMO</span>
+              <span>No Palm Oil</span>
+              <span>Vegan where applicable</span>
+            </div>
             <div class="hero-actions">
-              <a href="#products" class="btn">Explore Products</a>
-              <a href="#about" class="btn btn-ghost">Our Story</a>
+              <a href="#products" class="btn">Виж продуктите</a>
+              <a href="#contact" class="btn btn-ghost">Запитване</a>
             </div>
           </div>
 
-          <div class="hero-card" role="img" aria-label="Assorted premium nut snacks">
-            <div class="chip">100% plant-based</div>
-            <h3>Small batches, big taste</h3>
-            <p>
-              Carefully sourced ingredients. No artificial flavors. Balanced texture in
-              every bite.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="products" id="products">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">Our lineup</p>
-            <h2>Find your favorite crunch</h2>
-          </div>
-
-          <div class="product-grid">
-            <article class="product-card">
-              <h3>Nut Bars</h3>
-              <p>Roasted almonds, honey, and cacao nibs in a chewy-crunchy bite.</p>
-              <a href="#contact">View details →</a>
-            </article>
-            <article class="product-card">
-              <h3>Nut Nougat</h3>
-              <p>Soft nougat layered with pistachio and hazelnut for a rich finish.</p>
-              <a href="#contact">View details →</a>
-            </article>
-            <article class="product-card">
-              <h3>Peanut Bars</h3>
-              <p>Classic roasted peanut flavor with sea salt and golden syrup.</p>
-              <a href="#contact">View details →</a>
-            </article>
-            <article class="product-card">
-              <h3>Sesame Halva</h3>
-              <p>Velvety sesame halva with a delicate sweetness and toasted aroma.</p>
-              <a href="#contact">View details →</a>
-            </article>
-            <article class="product-card">
-              <h3>Hazelnut Butter</h3>
-              <p>Ultra-smooth spread with two ingredients only: hazelnuts and cocoa.</p>
-              <a href="#contact">View details →</a>
-            </article>
-            <article class="product-card">
-              <h3>Power Mix</h3>
-              <p>Portable packs of nuts, berries, and seeds for active routines.</p>
-              <a href="#contact">View details →</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="about" id="about">
-        <div class="container about-grid">
-          <div>
-            <p class="eyebrow">About LoveNutty</p>
-            <h2>Built around real ingredients and honest taste.</h2>
-            <p>
-              We started LoveNutty to make better snack options with fewer ingredients
-              and fuller flavor. Every recipe is tested in-house and produced in small
-              batches for consistent quality.
-            </p>
-            <ul class="feature-list">
-              <li>No artificial colors or preservatives</li>
-              <li>Balanced sweetness and natural texture</li>
-              <li>Made for daily snacking and gifting</li>
-            </ul>
-          </div>
-          <aside class="about-highlight">
-            <h3>Why customers choose us</h3>
-            <p>
-              Thoughtful sourcing, transparent labels, and flavors that keep people
-              coming back.
-            </p>
-            <div class="stats">
-              <div><strong>15+</strong><span>Signature products</span></div>
-              <div><strong>98%</strong><span>Positive reviews</span></div>
-              <div><strong>7</strong><span>Local partner farms</span></div>
+          <aside class="hero-panel reveal tilt" aria-label="Продуктов акцент">
+            <div class="hero-badge">Bio Premium</div>
+            <div class="hero-visual">
+              <img src="assets/images/hhf-home.jpg" alt="Лешникова ферма отгоре" loading="eager" />
             </div>
+            <div class="hero-stat-grid">
+              <article>
+                <strong>15+</strong>
+                <span>Продуктови линии</span>
+              </article>
+              <article>
+                <strong>7</strong>
+                <span>Партньорски ферми</span>
+              </article>
+              <article>
+                <strong>98%</strong>
+                <span>Позитивна обратна връзка</span>
+              </article>
+            </div>
+            <div class="panel-note">Натурални рецепти • модерна визия • premium усещане</div>
           </aside>
         </div>
       </section>
 
-      <section class="contact" id="contact">
-        <div class="container contact-grid">
+      <section class="ticker" aria-label="Ключови качества">
+        <div class="ticker-track">
+          <span>Single origin hazelnuts</span>
+          <span>Crafted in small batches</span>
+          <span>Modern bio branding</span>
+          <span>Retail & export ready</span>
+          <span>Clean label products</span>
+          <span>Single origin hazelnuts</span>
+          <span>Crafted in small batches</span>
+          <span>Modern bio branding</span>
+        </div>
+      </section>
+
+      <section id="about" class="section section-light">
+        <div class="container split reveal">
           <div>
-            <p class="eyebrow">Get in touch</p>
-            <h2>Let’s talk products and partnerships.</h2>
+            <p class="eyebrow">За Love Nutty</p>
+            <h2>Семеен бранд с усещане за класа и доверие.</h2>
             <p>
-              Reach us by phone, email, or send a quick message below and we’ll reply
-              shortly.
+              Развиваме бранд система, в която вкусът, хранителната стойност и визуалната
+              идентичност работят заедно. Резултатът е продукт, който се отличава на рафта.
             </p>
+          </div>
+          <ul class="bullet-list">
+            <li>Устойчиви практики при отглеждане и реколта</li>
+            <li>Кратки и прозрачни етикети</li>
+            <li>Рецепти с балансиран вкус и хранителна стойност</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="products" class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Продуктова селекция</p>
+            <h2>Създадени за вкус, енергия и премиум позициониране</h2>
+            <p>Фокус върху модерни формати, качествени съставки и силен визуален език.</p>
+            <div class="product-tools" aria-label="Филтри за продукти">
+              <div class="filter-row" role="group" aria-label="Категории">
+                <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+                <button type="button" class="filter-btn" data-filter="bars">Bars</button>
+                <button type="button" class="filter-btn" data-filter="protein">Protein</button>
+                <button type="button" class="filter-btn" data-filter="spreads">Spreads</button>
+                <button type="button" class="filter-btn" data-filter="premium">Premium</button>
+              </div>
+              <p class="products-count" id="products-count" aria-live="polite">6 продукта</p>
+            </div>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card reveal" data-category="bars" data-product="Nut Bars" data-description="Хрупкави ядкови барове с внимателно подбрани съставки." data-tag="Best Seller">
+              <div class="media-slot">
+                <img src="assets/images/hhf-no-sugar-bars.jpg" alt="Love Nutty no sugar bars" loading="lazy" />
+              </div>
+              <span class="card-chip">Best Seller</span>
+              <h3>Nut Bars</h3>
+              <p>Хрупкави ядкови барове с внимателно подбрани съставки.</p>
+              <button class="btn-link open-product" type="button">Quick view →</button>
+            </article>
+
+            <article class="product-card reveal" data-category="protein" data-product="Protein Nougat" data-description="Нуга с протеин и мед, вдъхновена от традиционна рецепта." data-tag="High Protein">
+              <div class="media-slot">
+                <img src="assets/images/hhf-nougat.jpg" alt="Love Nutty protein nougat" loading="lazy" />
+              </div>
+              <span class="card-chip">High Protein</span>
+              <h3>Protein Nougat</h3>
+              <p>Нуга с протеин и мед, вдъхновена от традиционна рецепта.</p>
+              <button class="btn-link open-product" type="button">Quick view →</button>
+            </article>
+
+            <article class="product-card reveal" data-category="bars" data-product="No Sugar Peanut Bars" data-description="Фъстъчени барове без добавена захар, с естествена сладост." data-tag="No Added Sugar">
+              <div class="media-slot">
+                <img src="assets/images/hhf-no-sugar-bars.jpg" alt="Love Nutty no sugar peanut bars" loading="lazy" />
+              </div>
+              <span class="card-chip">No Added Sugar</span>
+              <h3>No Sugar Peanut Bars</h3>
+              <p>Фъстъчени барове без добавена захар, с естествена сладост.</p>
+              <button class="btn-link open-product" type="button">Quick view →</button>
+            </article>
+
+            <article class="product-card reveal" data-category="premium" data-product="Hazelnut Halva" data-description="100% натурална халва с натрошени лешници и плътен вкус." data-tag="Traditional Recipe">
+              <div class="media-slot">
+                <img src="assets/images/hhf-halva.jpg" alt="Hazelnut halva product" loading="lazy" />
+              </div>
+              <span class="card-chip">Traditional Recipe</span>
+              <h3>Hazelnut Halva</h3>
+              <p>100% натурална халва с натрошени лешници и плътен вкус.</p>
+              <button class="btn-link open-product" type="button">Quick view →</button>
+            </article>
+
+            <article class="product-card reveal" data-category="spreads" data-product="Hazelnut Butter" data-description="Чист лешников тахан без палмово масло и без ГМО." data-tag="Clean Label">
+              <div class="media-slot">
+                <img src="assets/images/hhf-pastes.jpg" alt="Hazelnut and pistachio spreads" loading="lazy" />
+              </div>
+              <span class="card-chip">Clean Label</span>
+              <h3>Hazelnut Butter</h3>
+              <p>Чист лешников тахан без палмово масло и без ГМО.</p>
+              <button class="btn-link open-product" type="button">Quick view →</button>
+            </article>
+
+            <article class="product-card reveal" data-category="premium" data-product="Power Boost Mix" data-description="Енергийни комбинации за активни хора и динамичен ден." data-tag="Active Lifestyle">
+              <div class="media-slot">
+                <img src="assets/images/dubai-cream.png" alt="Premium pistachio cream jars" loading="lazy" />
+              </div>
+              <span class="card-chip">Active Lifestyle</span>
+              <h3>Power Boost Mix</h3>
+              <p>Енергийни комбинации за активни хора и динамичен ден.</p>
+              <button class="btn-link open-product" type="button">Quick view →</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section visual-story section-gradient">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Brand visuals</p>
+            <h2>Реални визии от продуктовата линия</h2>
+          </div>
+          <div class="story-grid reveal">
+            <figure class="story-card story-card-lg">
+              <img src="assets/images/hhf-brand.jpg" alt="Love Nutty бранд комуникация" loading="lazy" />
+            </figure>
+            <figure class="story-card">
+              <img src="assets/images/hhf-nougat.jpg" alt="Protein nougat серия" loading="lazy" />
+            </figure>
+            <figure class="story-card">
+              <img src="assets/images/hhf-no-sugar-bars.jpg" alt="No sugar bars серия" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section spotlight">
+        <div class="container spotlight-grid reveal">
+          <div>
+            <p class="eyebrow">Signature line</p>
+            <h2>Hazelnut Collection със силна premium идентичност</h2>
+            <p>
+              Концепция за елегантна продуктова линия с минималистичен дизайн, фокус върху
+              натурални съставки и ясно разграничаване по вкус.
+            </p>
+            <a href="#contact" class="btn">Искам каталожна презентация</a>
+          </div>
+          <div class="spotlight-card tilt" aria-hidden="true">
+            <div class="spotlight-layer"></div>
+            <div class="spotlight-label">2026 PACKAGING DIRECTION</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="farm" class="section section-gradient">
+        <div class="container split reveal">
+          <div>
+            <p class="eyebrow">The Hazelnut Farm</p>
+            <h2>От дървото до продукта — без компромис.</h2>
+            <p>
+              Следим всеки етап: от цъфтежа и беритбата до селекцията на ядките, за да
+              гарантираме постоянно качество и устойчиво производство.
+            </p>
+          </div>
+          <div class="timeline">
+            <div><strong>Пролет</strong><span>Контрол на почвата и цъфтеж</span></div>
+            <div><strong>Лято</strong><span>Грижа за насажденията и напояване</span></div>
+            <div><strong>Есен</strong><span>Ръчна селекция и беритба</span></div>
+            <div><strong>Целогодишно</strong><span>Разработка на био рецепти</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="bio" class="section section-light">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Bio standards</p>
+            <h2>Чиста формула за чисто доверие</h2>
+          </div>
+          <div class="quality-grid">
+            <article class="quality-card reveal">
+              <h3>Съставки</h3>
+              <p>Работим с кратки рецепти и разпознаваеми суровини.</p>
+            </article>
+            <article class="quality-card reveal">
+              <h3>Произход</h3>
+              <p>Ясно проследяване на суровините от ферма до партида.</p>
+            </article>
+            <article class="quality-card reveal">
+              <h3>Производство</h3>
+              <p>Малки серии за постоянен контрол на вкуса и текстурата.</p>
+            </article>
+            <article class="quality-card reveal">
+              <h3>Опаковка</h3>
+              <p>Модерен дизайн, подходящ за ритейл, подарък и export-ready визия.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Партньорска обратна връзка</p>
+            <h2>Какво казват нашите клиенти</h2>
+          </div>
+
+          <div class="quote-slider reveal" id="quote-slider" aria-live="polite">
+            <article class="quote active">
+              <p>„Продуктите изглеждат premium и се продават отлично в специализирани магазини.“</p>
+              <span>Retail Partner, Sofia</span>
+            </article>
+            <article class="quote">
+              <p>„Комбинацията от вкус, чист етикет и модерен дизайн носи реална добавена стойност.“</p>
+              <span>Distributor, Plovdiv</span>
+            </article>
+            <article class="quote">
+              <p>„Идеален избор за клиенти, които търсят био качество с усещане за лукс.“</p>
+              <span>Concept Store, Varna</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="brands" class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">House of Healthy Foods</p>
+            <h2>Нашите брандове</h2>
+          </div>
+          <div class="brand-grid">
+            <article class="brand-card reveal">
+              <h3>Love Nutty</h3>
+              <p>Семеен бранд с фокус върху лешникови деликатеси и функционални продукти.</p>
+            </article>
+            <article class="brand-card reveal">
+              <h3>Lavish Smile</h3>
+              <p>Премиум линия с gourmet позициониране и модерна продуктова презентация.</p>
+            </article>
+            <article class="brand-card reveal">
+              <h3>Power Boost</h3>
+              <p>Енергийни продукти за спорт, движение и активен lifestyle.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section-light">
+        <div class="container contact-grid reveal">
+          <div>
+            <p class="eyebrow">Контакт</p>
+            <h2>Изпрати запитване за дистрибуция, private label или export</h2>
+            <p>Ще върнем предложение с продуктови спецификации и търговски условия.</p>
             <div class="contact-lines">
+              <a href="mailto:sales@houseofhealthyfoods.com">sales@houseofhealthyfoods.com</a>
               <a href="tel:+359123456789">+359 123 456 789</a>
-              <a href="mailto:hello@lovenutty.com">hello@lovenutty.com</a>
             </div>
           </div>
 
           <form class="contact-form" id="contact-form">
             <label>
-              Name
+              Име
               <input type="text" name="name" required />
             </label>
             <label>
-              Email
+              Имейл
               <input type="email" name="email" required />
             </label>
             <label>
-              Message
+              Съобщение
               <textarea name="message" rows="4" required></textarea>
             </label>
-            <button type="submit" class="btn">Send Message</button>
+            <button type="submit" class="btn">Изпрати</button>
             <p class="form-status" aria-live="polite"></p>
-          </form>
-        </div>
-      </section>
-
-      <section class="subscribe" id="subscribe">
-        <div class="container subscribe-wrap">
-          <div>
-            <p class="eyebrow">Newsletter</p>
-            <h2>Get new launches first.</h2>
-          </div>
-          <form class="subscribe-form" id="subscribe-form">
-            <input type="email" name="email" placeholder="Your email" required />
-            <button type="submit" class="btn btn-dark">Subscribe</button>
           </form>
         </div>
       </section>
@@ -187,10 +372,35 @@
 
     <footer class="site-footer">
       <div class="container footer-wrap">
-        <p>© <span id="year"></span> LoveNutty. All rights reserved.</p>
+        <p>© <span id="year"></span> THE HAZELNUT FARM • LOVE NUTTY</p>
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>
+
+    <aside class="floating-contact" id="floating-contact" aria-live="polite">
+      <button class="floating-contact-btn" id="floating-contact-btn" aria-expanded="false" aria-controls="floating-contact-panel">
+        Contact
+      </button>
+      <div class="floating-contact-panel" id="floating-contact-panel" hidden>
+        <a href="mailto:sales@houseofhealthyfoods.com">sales@houseofhealthyfoods.com</a>
+        <a href="tel:+359123456789">+359 123 456 789</a>
+      </div>
+    </aside>
+
+    <section class="cookie-banner" id="cookie-banner" hidden>
+      <p>Използваме бисквитки за по-добро изживяване и аналитика.</p>
+      <button class="btn btn-small" id="cookie-accept" type="button">Разбрах</button>
+    </section>
+
+    <div class="product-modal" id="product-modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="product-modal-card">
+        <button class="product-modal-close" id="product-modal-close" aria-label="Затвори">×</button>
+        <span class="product-modal-tag" id="product-modal-tag"></span>
+        <h3 id="product-modal-title"></h3>
+        <p id="product-modal-description"></p>
+        <a href="#contact" class="btn">Запитай за оферта</a>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
