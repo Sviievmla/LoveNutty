@@ -1,416 +1,633 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bg">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Love Nutty — The Hazelnut Farm</title>
-    <meta
-      name="description"
-      content="Love Nutty и The Hazelnut Farm — модерни био продукти от лешници, без компромис в качеството."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="scroll-progress" aria-hidden="true"></div>
-    <div class="grain-overlay" aria-hidden="true"></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House of Healthy Foods · 2026 bio identity</title>
+  <meta name="description" content="Love Nutty · The Hazelnut Farm – модерни био продукти от лешници, без компромис в качеството." />
+  <!-- Poppins font (clean, modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* modern‑reset + minimal design system — 2026 premium vibe */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #f7f5f0;          /* soft chalk */
+      --card: #ffffffcc;
+      --text: #1e2a21;
+      --soft-green: #d4dfc7;
+      --accent-amber: #c89f68;
+      --accent-deep: #2b4b3b;
+      --accent-sand: #e8dccc;
+      --glass: rgba(255,255,255,0.5);
+      --border-light: #d2cdc0;
+      --font: 'Poppins', system-ui, sans-serif;
+      --shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+      --shadow-soft: 0 8px 20px rgba(0,0,0,0.03);
+    }
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      font-weight: 300;
+      font-size: 16px;
+    }
+    h1,h2,h3 {
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    h1 { font-size: clamp(2.5rem, 8vw, 4.2rem); }
+    h2 { font-size: clamp(2rem, 5vw, 3rem); }
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    /* glass‑morphism elements */
+    .site-header, .hero, .section, .site-footer {
+      position: relative;
+      backdrop-filter: blur(2px);
+    }
+    /* Grain overlay */
+    .grain-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wMjUiIC8+PC9zdmc+');
+      pointer-events: none;
+      opacity: 0.4;
+      z-index: 9999;
+    }
+    /* subtle cursor glow */
+    .cursor-glow {
+      position: fixed;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle at center, #c1d9b5 0%, transparent 80%);
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.2;
+      pointer-events: none;
+      z-index: 9998;
+      transition: transform 0.08s ease;
+    }
+    /* header */
+    .site-header {
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      background: rgba(247,245,240,0.7);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(200,175,140,0.2);
+      z-index: 100;
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .logo-img {
+      width: 58px;
+      height: auto;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.02));
+    }
+    .logo-main {
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2b4b3b, #5a7c66);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .logo-sub {
+      font-size: 0.8rem;
+      opacity: 0.6;
+      margin-left: -0.2rem;
+    }
+    .lang-switch {
+      background: none;
+      border: 1px solid var(--border-light);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-weight: 400;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: 1rem;
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(4px);
+    }
+    .menu-btn {
+      display: none; /* simplified – desktop first */
+    }
+    .site-nav {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .site-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 400;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .site-nav a:hover {
+      border-bottom: 1px solid var(--accent-amber);
+    }
+    .btn {
+      background: var(--accent-deep);
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .btn-large { padding: 0.8rem 2.5rem; }
+    .btn:hover { background: #1f3d30; transform: scale(0.98); }
+    /* hero 2026 double layer (clean) */
+    .hero-2026 {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .hero-bg-2026 {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-cover-2026 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.92) brightness(0.96);
+    }
+    .hero-gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(247,245,240,0.7) 0%, rgba(247,245,240,0.3) 50%, transparent 80%);
+    }
+    .hero-grid-2026 {
+      position: relative;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    .hero-text-2026 {
+      max-width: 700px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.75rem;
+      color: #6e7b72;
+      margin-bottom: 1rem;
+    }
+    .gradient-text-2026 {
+      background: linear-gradient(140deg, #2b4b3b, #8b6f4c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-lead {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 2rem;
+      color: #2f3a33;
+      font-weight: 300;
+    }
+    .hero-tags-2026 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .hero-tags-2026 span {
+      background: rgba(43,75,59,0.08);
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 400;
+      border: 0.5px solid rgba(200,159,104,0.2);
+    }
+    .hero-actions-2026 { display: flex; gap: 1rem; }
+    .btn-2026 {
+      background: #1e2a21;
+      color: white;
+      padding: 1rem 2.8rem;
+      border-radius: 50px;
+    }
+    .btn-2026-ghost {
+      background: transparent;
+      border: 1px solid #1e2a21;
+      color: #1e2a21;
+    }
+    /* flying nuts reduced */
+    .flying-nuts { display: none; }
+    /* product grid – minimal cards */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .product-card {
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 36px;
+      padding: 1.8rem 1.5rem 1.8rem;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent-amber);
+    }
+    .media-slot {
+      width: 100%;
+      height: 190px;
+      border-radius: 24px;
+      background: #e9e1d6;
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+    }
+    .media-slot img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .card-chip {
+      position: absolute;
+      top: 1rem; right: 1.5rem;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(4px);
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent-deep);
+    }
+    .btn-link {
+      background: none;
+      border: none;
+      font-weight: 500;
+      margin-top: 1rem;
+      cursor: pointer;
+      color: var(--accent-deep);
+      border-bottom: 1px solid transparent;
+    }
+    .filter-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid #c0bfb2;
+      padding: 0.4rem 1.4rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .filter-btn.is-active {
+      background: var(--accent-deep);
+      color: white;
+      border-color: var(--accent-deep);
+    }
+    .products-count { margin-top: 0.5rem; font-size: 0.9rem; }
 
-    <header class="site-header" id="top">
-      <div class="container nav-wrap">
-        <a href="#top" class="logo-group" aria-label="Love Nutty home">
-          <img src="assets/images/hhf-logo.png" alt="HHF House of Healthy Foods logo" class="logo-img" width="48" height="48" loading="eager" />
-          <span class="logo-main">THE HAZELNUT FARM</span>
-          <span class="logo-sub">House of Healthy Foods</span>
-        </a>
+    /* quality grid */
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .quality-card {
+      background: white;
+      padding: 2.2rem 1.5rem;
+      border-radius: 32px;
+      border: 1px solid #f0ebe0;
+    }
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .spotlight-card {
+      background: #dad3c6;
+      height: 300px;
+      border-radius: 200px 40px 200px 40px;
+      background-image: radial-gradient(circle at 30% 30%, #fff5e6, #b9aa93);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 2rem;
+      font-weight: 500;
+      color: #2b4b3b;
+    }
+    /* quote slider minimal */
+    .quote-slider { text-align: center; padding: 3rem 2rem; background: rgba(255,255,250,0.7); border-radius: 60px; }
+    .quote { display: none; font-size: 1.4rem; }
+    .quote.active { display: block; }
 
-        <button class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Отвори меню">
-          <span></span><span></span><span></span>
-        </button>
+    /* footer */
+    .site-footer {
+      border-top: 1px solid var(--border-light);
+      padding: 2rem 0;
+      margin-top: 4rem;
+    }
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+    /* floating contact */
+    .floating-contact {
+      position: fixed;
+      bottom: 30px; right: 30px;
+      z-index: 999;
+    }
+    .floating-contact-btn {
+      background: var(--accent-deep);
+      border: none;
+      color: white;
+      width: 60px; height: 60px;
+      border-radius: 60px;
+      font-size: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+    .floating-contact-panel {
+      position: absolute;
+      bottom: 80px; right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      min-width: 240px;
+      box-shadow: var(--shadow);
+    }
+    .floating-contact-panel[hidden] { display: none; }
+    /* product modal */
+    .product-modal {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.2); backdrop-filter: blur(6px);
+      display: none; align-items: center; justify-content: center; z-index: 10000;
+    }
+    .product-modal[aria-hidden="false"] { display: flex; }
+    .product-modal-card {
+      background: #f2efe8; padding: 3rem; border-radius: 60px; max-width: 400px;
+    }
+    .product-modal-close {
+      float: right; background: none; border: none; font-size: 2rem; cursor: pointer;
+    }
+    /* reveal animation helper */
+    .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease; }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+    @media (max-width: 800px) {
+      .site-nav { display: none; }
+      .hero-grid-2026 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain-overlay" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-        <nav id="site-nav" class="site-nav" aria-label="Основна навигация">
-          <a href="#about">За нас</a>
-          <a href="#farm">Фермата</a>
-          <a href="#products">Продукти</a>
-          <a href="#bio">Bio стандарт</a>
-          <a href="#brands">Брандове</a>
-          <a href="#contact" class="btn btn-small">Контакт</a>
-        </nav>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="logo-group">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232b4b3b'/%3E%3Ctext x='20' y='70' fill='%23f7f5f0' font-size='50' font-family='Arial'%3EH%3C/text%3E%3C/svg%3E" alt="HHF" class="logo-img" width="50" height="50" />
+        <span class="logo-main">HOUSE OF HEALTHY FOODS</span>
+        <span class="logo-sub">Bio Products New Generation</span>
+      </a>
+      <button class="lang-switch" onclick="window.location.href='#'">EN</button>
+      <nav class="site-nav">
+        <a href="#about">За нас</a><a href="#farm">Ферма</a><a href="#products">Продукти</a><a href="#bio">Био</a><a href="#brands">Брандове</a>
+        <a href="#contact" class="btn btn-large">Контакт</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2026 premium hero -->
+    <section class="hero-2026">
+      <div class="hero-bg-2026">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='900' viewBox='0 0 1200 900'%3E%3Crect width='1200' height='900' fill='%23dad3c6'/%3E%3Ccircle cx='300' cy='300' r='120' fill='%23b3a68d' opacity='0.3'/%3E%3C/svg%3E" alt="background farm" class="hero-cover-2026" />
+        <div class="hero-gradient-overlay"></div>
       </div>
-    </header>
-
-    <main>
-      <section class="hero premium-hero">
-        <div class="hero-bg" aria-hidden="true">
-          <span class="orb orb-1"></span>
-          <span class="orb orb-2"></span>
-          <span class="orb orb-3"></span>
-          <img src="assets/images/hhf-brand.jpg" alt="HHF brand visual" class="hero-cover" loading="eager" />
-          <div class="flying-nuts" aria-hidden="true">
-            <img src="assets/images/flying-hazelnut.png" class="flying-nut" style="--i:0" alt="Hazelnut" />
-            <img src="assets/images/flying-hazelnut.png" class="flying-nut" style="--i:1" alt="Hazelnut" />
-            <img src="assets/images/flying-hazelnut.png" class="flying-nut" style="--i:2" alt="Hazelnut" />
-            <img src="assets/images/flying-hazelnut.png" class="flying-nut" style="--i:3" alt="Hazelnut" />
-            <img src="assets/images/flying-hazelnut.png" class="flying-nut" style="--i:4" alt="Hazelnut" />
+      <div class="container hero-grid-2026">
+        <div class="hero-text-2026 reveal">
+          <p class="eyebrow">Love Nutty • 2026 Trend Edition</p>
+          <h1><span class="gradient-text-2026">Бъдещето на био лукса</span><br>The Hazelnut Farm</h1>
+          <p class="hero-lead">Чисти съставки. Модерен стил. Продукти за ценители и визионери.</p>
+          <div class="hero-tags-2026">
+            <span>100% Quality</span><span>No GMO</span><span>No Palm Oil</span><span>Vegan</span><span>2026 Premium</span>
+          </div>
+          <div class="hero-actions-2026">
+            <a href="#products" class="btn btn-2026">Виж продуктите</a>
+            <a href="#contact" class="btn btn-2026-ghost">Свържи се</a>
           </div>
         </div>
-        <div class="container hero-grid">
-          <div class="hero-text reveal">
-            <p class="eyebrow">Love Nutty • 2026 premium bio identity</p>
-            <h1><span class="gradient-text">Луксозна био визия</span> за лешникова ферма от ново поколение.</h1>
-            <p>
-              Продукти с чисти съставки, ясно проследяване и модерна презентация,
-              създадени за ритейл, export и клиенти, които търсят качество с характер.
-            </p>
-            <div class="hero-tags">
-              <span>100% Quality</span>
-              <span>No GMO</span>
-              <span>No Palm Oil</span>
-              <span>Vegan where applicable</span>
-            </div>
-            <div class="hero-actions">
-              <a href="#products" class="btn">Виж продуктите</a>
-              <a href="#contact" class="btn btn-ghost">Запитване</a>
-            </div>
-          </div>
-
-          <aside class="hero-panel reveal tilt" aria-label="Продуктов акцент">
-            <div class="hero-badge">Bio Premium</div>
-            <div class="hero-visual">
-              <img src="assets/images/hhf-home.jpg" alt="Лешникова ферма отгоре" loading="eager" />
-            </div>
-            <div class="hero-stat-grid">
-              <article>
-                <strong>15+</strong>
-                <span>Продуктови линии</span>
-              </article>
-              <article>
-                <strong>7</strong>
-                <span>Партньорски ферми</span>
-              </article>
-              <article>
-                <strong>98%</strong>
-                <span>Позитивна обратна връзка</span>
-              </article>
-            </div>
-            <div class="panel-note">Натурални рецепти • модерна визия • premium усещане</div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="ticker" aria-label="Ключови качества">
-        <div class="ticker-track">
-          <span>Single origin hazelnuts</span>
-          <span>Crafted in small batches</span>
-          <span>Modern bio branding</span>
-          <span>Retail & export ready</span>
-          <span>Clean label products</span>
-          <span>Single origin hazelnuts</span>
-          <span>Crafted in small batches</span>
-          <span>Modern bio branding</span>
-        </div>
-      </section>
-
-      <section id="about" class="section section-light">
-        <div class="container split reveal">
-          <div>
-            <p class="eyebrow">За Love Nutty</p>
-            <h2>Семеен бранд с усещане за класа и доверие.</h2>
-            <p>
-              Развиваме бранд система, в която вкусът, хранителната стойност и визуалната
-              идентичност работят заедно. Резултатът е продукт, който се отличава на рафта.
-            </p>
-          </div>
-          <ul class="bullet-list">
-            <li>Устойчиви практики при отглеждане и реколта</li>
-            <li>Кратки и прозрачни етикети</li>
-            <li>Рецепти с балансиран вкус и хранителна стойност</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="products" class="section">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Продуктова селекция</p>
-            <h2>Създадени за вкус, енергия и премиум позициониране</h2>
-            <p>Фокус върху модерни формати, качествени съставки и силен визуален език.</p>
-            <div class="product-tools" aria-label="Филтри за продукти">
-              <div class="filter-row" role="group" aria-label="Категории">
-                <button type="button" class="filter-btn is-active" data-filter="all">All</button>
-                <button type="button" class="filter-btn" data-filter="bars">Bars</button>
-                <button type="button" class="filter-btn" data-filter="protein">Protein</button>
-                <button type="button" class="filter-btn" data-filter="spreads">Spreads</button>
-                <button type="button" class="filter-btn" data-filter="premium">Premium</button>
-              </div>
-              <p class="products-count" id="products-count" aria-live="polite">6 продукта</p>
-            </div>
-          </div>
-
-          <div class="product-grid">
-            <article class="product-card reveal" data-category="bars" data-product="Nut Bars" data-description="Хрупкави ядкови барове с внимателно подбрани съставки." data-tag="Best Seller">
-              <div class="media-slot">
-                <img src="assets/images/hhf-no-sugar-bars.jpg" alt="Love Nutty no sugar bars" loading="lazy" />
-              </div>
-              <span class="card-chip">Best Seller</span>
-              <h3>Nut Bars</h3>
-              <p>Хрупкави ядкови барове с внимателно подбрани съставки.</p>
-              <button class="btn-link open-product" type="button">Quick view →</button>
-            </article>
-
-            <article class="product-card reveal" data-category="protein" data-product="Protein Nougat" data-description="Нуга с протеин и мед, вдъхновена от традиционна рецепта." data-tag="High Protein">
-              <div class="media-slot">
-                <img src="assets/images/hhf-nougat.jpg" alt="Love Nutty protein nougat" loading="lazy" />
-              </div>
-              <span class="card-chip">High Protein</span>
-              <h3>Protein Nougat</h3>
-              <p>Нуга с протеин и мед, вдъхновена от традиционна рецепта.</p>
-              <button class="btn-link open-product" type="button">Quick view →</button>
-            </article>
-
-            <article class="product-card reveal" data-category="bars" data-product="No Sugar Peanut Bars" data-description="Фъстъчени барове без добавена захар, с естествена сладост." data-tag="No Added Sugar">
-              <div class="media-slot">
-                <img src="assets/images/hhf-no-sugar-bars.jpg" alt="Love Nutty no sugar peanut bars" loading="lazy" />
-              </div>
-              <span class="card-chip">No Added Sugar</span>
-              <h3>No Sugar Peanut Bars</h3>
-              <p>Фъстъчени барове без добавена захар, с естествена сладост.</p>
-              <button class="btn-link open-product" type="button">Quick view →</button>
-            </article>
-
-            <article class="product-card reveal" data-category="premium" data-product="Hazelnut Halva" data-description="100% натурална халва с натрошени лешници и плътен вкус." data-tag="Traditional Recipe">
-              <div class="media-slot">
-                <img src="assets/images/hhf-halva.jpg" alt="Hazelnut halva product" loading="lazy" />
-              </div>
-              <span class="card-chip">Traditional Recipe</span>
-              <h3>Hazelnut Halva</h3>
-              <p>100% натурална халва с натрошени лешници и плътен вкус.</p>
-              <button class="btn-link open-product" type="button">Quick view →</button>
-            </article>
-
-            <article class="product-card reveal" data-category="spreads" data-product="Hazelnut Butter" data-description="Чист лешников тахан без палмово масло и без ГМО." data-tag="Clean Label">
-              <div class="media-slot">
-                <img src="assets/images/hhf-pastes.jpg" alt="Hazelnut and pistachio spreads" loading="lazy" />
-              </div>
-              <span class="card-chip">Clean Label</span>
-              <h3>Hazelnut Butter</h3>
-              <p>Чист лешников тахан без палмово масло и без ГМО.</p>
-              <button class="btn-link open-product" type="button">Quick view →</button>
-            </article>
-
-            <article class="product-card reveal" data-category="premium" data-product="Power Boost Mix" data-description="Енергийни комбинации за активни хора и динамичен ден." data-tag="Active Lifestyle">
-              <div class="media-slot">
-                <img src="assets/images/dubai-cream.png" alt="Premium pistachio cream jars" loading="lazy" />
-              </div>
-              <span class="card-chip">Active Lifestyle</span>
-              <h3>Power Boost Mix</h3>
-              <p>Енергийни комбинации за активни хора и динамичен ден.</p>
-              <button class="btn-link open-product" type="button">Quick view →</button>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section visual-story section-gradient">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Brand visuals</p>
-            <h2>Реални визии от продуктовата линия</h2>
-          </div>
-          <div class="story-grid reveal">
-            <figure class="story-card story-card-lg">
-              <img src="assets/images/hhf-brand.jpg" alt="Love Nutty бранд комуникация" loading="lazy" />
-            </figure>
-            <figure class="story-card">
-              <img src="assets/images/hhf-nougat.jpg" alt="Protein nougat серия" loading="lazy" />
-            </figure>
-            <figure class="story-card">
-              <img src="assets/images/hhf-no-sugar-bars.jpg" alt="No sugar bars серия" loading="lazy" />
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="section spotlight">
-        <div class="container spotlight-grid reveal">
-          <div>
-            <p class="eyebrow">Signature line</p>
-            <h2>Hazelnut Collection със силна premium идентичност</h2>
-            <p>
-              Концепция за елегантна продуктова линия с минималистичен дизайн, фокус върху
-              натурални съставки и ясно разграничаване по вкус.
-            </p>
-            <a href="#contact" class="btn">Искам каталожна презентация</a>
-          </div>
-          <div class="spotlight-card tilt" aria-hidden="true">
-            <div class="spotlight-layer"></div>
-            <div class="spotlight-label">2026 PACKAGING DIRECTION</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="farm" class="section section-gradient">
-        <div class="container split reveal">
-          <div>
-            <p class="eyebrow">The Hazelnut Farm</p>
-            <h2>От дървото до продукта — без компромис.</h2>
-            <p>
-              Следим всеки етап: от цъфтежа и беритбата до селекцията на ядките, за да
-              гарантираме постоянно качество и устойчиво производство.
-            </p>
-          </div>
-          <div class="timeline">
-            <div><strong>Пролет</strong><span>Контрол на почвата и цъфтеж</span></div>
-            <div><strong>Лято</strong><span>Грижа за насажденията и напояване</span></div>
-            <div><strong>Есен</strong><span>Ръчна селекция и беритба</span></div>
-            <div><strong>Целогодишно</strong><span>Разработка на био рецепти</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="bio" class="section section-light">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Bio standards</p>
-            <h2>Чиста формула за чисто доверие</h2>
-          </div>
-          <div class="quality-grid">
-            <article class="quality-card reveal">
-              <h3>Съставки</h3>
-              <p>Работим с кратки рецепти и разпознаваеми суровини.</p>
-            </article>
-            <article class="quality-card reveal">
-              <h3>Произход</h3>
-              <p>Ясно проследяване на суровините от ферма до партида.</p>
-            </article>
-            <article class="quality-card reveal">
-              <h3>Производство</h3>
-              <p>Малки серии за постоянен контрол на вкуса и текстурата.</p>
-            </article>
-            <article class="quality-card reveal">
-              <h3>Опаковка</h3>
-              <p>Модерен дизайн, подходящ за ритейл, подарък и export-ready визия.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section testimonials">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Партньорска обратна връзка</p>
-            <h2>Какво казват нашите клиенти</h2>
-          </div>
-
-          <div class="quote-slider reveal" id="quote-slider" aria-live="polite">
-            <article class="quote active">
-              <p>„Продуктите изглеждат premium и се продават отлично в специализирани магазини.“</p>
-              <span>Retail Partner, Sofia</span>
-            </article>
-            <article class="quote">
-              <p>„Комбинацията от вкус, чист етикет и модерен дизайн носи реална добавена стойност.“</p>
-              <span>Distributor, Plovdiv</span>
-            </article>
-            <article class="quote">
-              <p>„Идеален избор за клиенти, които търсят био качество с усещане за лукс.“</p>
-              <span>Concept Store, Varna</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="brands" class="section">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">House of Healthy Foods</p>
-            <h2>Нашите брандове</h2>
-          </div>
-          <div class="brand-grid">
-            <article class="brand-card reveal">
-              <h3>Love Nutty</h3>
-              <p>Семеен бранд с фокус върху лешникови деликатеси и функционални продукти.</p>
-            </article>
-            <article class="brand-card reveal">
-              <h3>Lavish Smile</h3>
-              <p>Премиум линия с gourmet позициониране и модерна продуктова презентация.</p>
-            </article>
-            <article class="brand-card reveal">
-              <h3>Power Boost</h3>
-              <p>Енергийни продукти за спорт, движение и активен lifestyle.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section section-light">
-        <div class="container contact-grid reveal">
-          <div>
-            <p class="eyebrow">Контакт</p>
-            <h2>Изпрати запитване за дистрибуция, private label или export</h2>
-            <p>Ще върнем предложение с продуктови спецификации и търговски условия.</p>
-            <div class="contact-lines">
-              <a href="mailto:sales@houseofhealthyfoods.com">sales@houseofhealthyfoods.com</a>
-              <a href="tel:+359123456789">+359 123 456 789</a>
-            </div>
-          </div>
-
-          <form class="contact-form" id="contact-form">
-            <label>
-              Име
-              <input type="text" name="name" required />
-            </label>
-            <label>
-              Имейл
-              <input type="email" name="email" required />
-            </label>
-            <label>
-              Съобщение
-              <textarea name="message" rows="4" required></textarea>
-            </label>
-            <button type="submit" class="btn">Изпрати</button>
-            <p class="form-status" aria-live="polite"></p>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <p>© <span id="year"></span> THE HAZELNUT FARM • LOVE NUTTY</p>
-        <a href="#top">Back to top ↑</a>
       </div>
-    </footer>
-
-    <aside class="floating-contact" id="floating-contact" aria-live="polite">
-      <button class="floating-contact-btn" id="floating-contact-btn" aria-expanded="false" aria-controls="floating-contact-panel">
-        Contact
-      </button>
-      <div class="floating-contact-panel" id="floating-contact-panel" hidden>
-        <a href="mailto:sales@houseofhealthyfoods.com">sales@houseofhealthyfoods.com</a>
-        <a href="tel:+359123456789">+359 123 456 789</a>
-      </div>
-    </aside>
-
-    <section class="cookie-banner" id="cookie-banner" hidden>
-      <p>Използваме бисквитки за по-добро изживяване и аналитика.</p>
-      <button class="btn btn-small" id="cookie-accept" type="button">Разбрах</button>
     </section>
 
-    <div class="product-modal" id="product-modal" aria-hidden="true" role="dialog" aria-modal="true">
-      <div class="product-modal-card">
-        <button class="product-modal-close" id="product-modal-close" aria-label="Затвори">×</button>
-        <span class="product-modal-tag" id="product-modal-tag"></span>
-        <h3 id="product-modal-title"></h3>
-        <p id="product-modal-description"></p>
-        <a href="#contact" class="btn">Запитай за оферта</a>
+    <!-- products section with filtering (JS) -->
+    <section id="products" class="section" style="padding: 4rem 0;">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Продуктова селекция</p>
+          <h2>Създадени за вкус и премиум позициониране</h2>
+          <div class="product-tools">
+            <div class="filter-row" id="filterRow">
+              <button class="filter-btn is-active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="bars">Bars</button>
+              <button class="filter-btn" data-filter="protein">Protein</button>
+              <button class="filter-btn" data-filter="spreads">Spreads</button>
+              <button class="filter-btn" data-filter="premium">Premium</button>
+            </div>
+            <p class="products-count" id="productsCount">6 продукта</p>
+          </div>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <!-- product cards (data attributes) -->
+          <article class="product-card" data-category="bars" data-product="Nut Bars" data-description="Хрупкави ядкови барове." data-tag="Best Seller">
+            <div class="media-slot"><img src="data:image/svg+xml,%3Csvg width='200' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='200' height='150' fill='%23c7b8a2'/%3E%3Ctext x='20' y='80' fill='%23333' font-size='18'%3Ebar%3C/text%3E%3C/svg%3E" alt="nut bar" /></div>
+            <span class="card-chip">Best Seller</span><h3>Nut Bars</h3><p>Хрупкави ядкови барове.</p><button class="btn-link open-product">Quick view →</button>
+          </article>
+          <article class="product-card" data-category="protein" data-product="Protein Nougat" data-description="Нуга с протеин и мед." data-tag="High Protein">
+            <div class="media-slot"><img src="data:image/svg+xml,%3Csvg width='200' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='200' height='150' fill='%23b3a68d'/%3E%3Ctext x='20' y='80' fill='%23333'%3Enougat%3C/text%3E%3C/svg%3E" alt="nougat" /></div>
+            <span class="card-chip">High Protein</span><h3>Protein Nougat</h3><p>Нуга с протеин и мед.</p><button class="btn-link open-product">Quick view →</button>
+          </article>
+          <article class="product-card" data-category="bars" data-product="No Sugar Peanut Bars" data-description="Фъстъчени барове без захар." data-tag="No Added Sugar">
+            <div class="media-slot"><img src="data:image/svg+xml,%3Csvg width='200' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='200' height='150' fill='%23cfc2ad'/%3E%3C/svg%3E" alt="" /></div>
+            <span class="card-chip">No Added Sugar</span><h3>No Sugar Peanut Bars</h3><p>Фъстъчени барове без захар.</p><button class="btn-link open-product">Quick view →</button>
+          </article>
+          <article class="product-card" data-category="premium" data-product="Hazelnut Halva" data-description="100% натурална халва." data-tag="Traditional Recipe">
+            <div class="media-slot"><img src="data:image/svg+xml,%3Csvg width='200' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='200' height='150' fill='%23d9cdb6'/%3E%3C/svg%3E" alt="" /></div>
+            <span class="card-chip">Traditional</span><h3>Hazelnut Halva</h3><p>100% натурална халва.</p><button class="btn-link open-product">Quick view →</button>
+          </article>
+          <article class="product-card" data-category="spreads" data-product="Hazelnut Butter" data-description="Чист лешников тахан." data-tag="Clean Label">
+            <div class="media-slot"><img src="data:image/svg+xml,%3Csvg width='200' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='200' height='150' fill='%23c2b49b'/%3E%3C/svg%3E" alt="" /></div>
+            <span class="card-chip">Clean Label</span><h3>Hazelnut Butter</h3><p>Чист лешников тахан.</p><button class="btn-link open-product">Quick view →</button>
+          </article>
+          <article class="product-card" data-category="premium" data-product="Power Boost Mix" data-description="Енергийни комбинации." data-tag="Active Lifestyle">
+            <div class="media-slot"><img src="data:image/svg+xml,%3Csvg width='200' height='150' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='200' height='150' fill='%23ab9f89'/%3E%3C/svg%3E" alt="" /></div>
+            <span class="card-chip">Active</span><h3>Power Boost Mix</h3><p>Енергийни комбинации.</p><button class="btn-link open-product">Quick view →</button>
+          </article>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- Farm & bio (condensed) -->
+    <section id="farm" class="section" style="background:#efeadb; padding:4rem 0;">
+      <div class="container split reveal" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem;">
+        <div><p class="eyebrow">The Hazelnut Farm</p><h2>От дървото до продукта</h2><p>Следим всеки етап: цъфтеж, беритба, селекция.</p></div>
+        <div class="timeline"><div><strong>Пролет</strong><span>Контрол на почвата</span></div><div><strong>Лято</strong><span>Грижа за насажденията</span></div><div><strong>Есен</strong><span>Ръчна селекция</span></div></div>
+      </div>
+    </section>
+
+    <section id="bio" class="section" style="padding:4rem 0;">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">Bio standards</p><h2>Чиста формула</h2></div>
+        <div class="quality-grid">
+          <div class="quality-card"><h3>Съставки</h3><p>Кратки рецепти.</p></div>
+          <div class="quality-card"><h3>Произход</h3><p>Проследяемост.</p></div>
+          <div class="quality-card"><h3>Опаковка</h3><p>export-ready визия.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- brands & contact -->
+    <section id="brands" class="section" style="background: #ffffffb0; padding:4rem 0;">
+      <div class="container"><h2 class="reveal">Нашите брандове</h2>
+        <div style="display:flex; gap:2rem; flex-wrap:wrap; margin-top:2rem;">
+          <article style="flex:1;"><h3>Love Nutty</h3><p>Семеен бранд, лешникови деликатеси.</p></article>
+          <article style="flex:1;"><h3>Lavish Smile</h3><p>Премиум gourmet линия.</p></article>
+          <article style="flex:1;"><h3>Power Boost</h3><p>Енергийни продукти.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" style="padding:4rem 0;">
+      <div class="container contact-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem;">
+        <div><p class="eyebrow">Контакт</p><h2>Запитване за дистрибуция</h2><p>sales@houseofhealthyfoods.com<br>+359 123 456 789</p></div>
+        <form class="contact-form" id="contactForm">
+          <label>Име <input type="text" name="name" required /></label>
+          <label>Имейл <input type="email" name="email" required /></label>
+          <label>Съобщение <textarea rows="3"></textarea></label>
+          <button class="btn" type="submit">Изпрати</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-wrap"><p>© 2026 THE HAZELNUT FARM • LOVE NUTTY</p><a href="#top">↑</a></div></footer>
+
+  <!-- floating contact & modal -->
+  <aside class="floating-contact">
+    <button class="floating-contact-btn" id="floatBtn">Контакт</button>
+    <div class="floating-contact-panel" id="floatPanel" hidden>
+      <a href="mailto:sales@houseofhealthyfoods.com">sales@...</a>
+      <a href="tel:+359123456789">+359 123 456 789</a>
+    </div>
+  </aside>
+
+  <div class="product-modal" id="productModal" aria-hidden="true">
+    <div class="product-modal-card">
+      <button class="product-modal-close" id="closeModal">×</button>
+      <span id="modalTag" class="card-chip" style="position:static;"></span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <a href="#contact" class="btn">Запитване</a>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // cursor glow
+      const glow = document.getElementById('cursorGlow');
+      document.addEventListener('mousemove', (e) => {
+        glow.style.transform = `translate(${e.clientX-150}px, ${e.clientY-150}px)`;
+      });
+
+      // reveal on scroll
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('revealed'); });
+      }, {threshold:0.1});
+      reveals.forEach(r => observer.observe(r));
+
+      // product filtering
+      const filterRow = document.getElementById('filterRow');
+      const products = document.querySelectorAll('.product-card');
+      const countSpan = document.getElementById('productsCount');
+      filterRow.addEventListener('click', (e) => {
+        if(!e.target.classList.contains('filter-btn')) return;
+        filterRow.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('is-active'));
+        e.target.classList.add('is-active');
+        const filter = e.target.dataset.filter;
+        let visible = 0;
+        products.forEach(p => {
+          const cat = p.dataset.category;
+          if(filter === 'all' || cat === filter) { p.style.display = 'block'; visible++; }
+          else p.style.display = 'none';
+        });
+        countSpan.innerText = visible + ' продукта';
+      });
+
+      // modal quick view
+      const modal = document.getElementById('productModal');
+      const modalTag = document.getElementById('modalTag');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDesc = document.getElementById('modalDesc');
+      const closeModal = document.getElementById('closeModal');
+      document.querySelectorAll('.open-product').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const card = e.target.closest('.product-card');
+          modalTitle.innerText = card.dataset.product || 'product';
+          modalDesc.innerText = card.dataset.description || '';
+          modalTag.innerText = card.dataset.tag || '';
+          modal.setAttribute('aria-hidden', 'false');
+        });
+      });
+      closeModal.addEventListener('click', () => modal.setAttribute('aria-hidden', 'true'));
+      modal.addEventListener('click', (e) => { if(e.target === modal) modal.setAttribute('aria-hidden', 'true'); });
+
+      // floating contact
+      const floatBtn = document.getElementById('floatBtn');
+      const floatPanel = document.getElementById('floatPanel');
+      floatBtn.addEventListener('click', () => {
+        if(floatPanel.hidden) { floatPanel.hidden = false; floatBtn.setAttribute('aria-expanded','true'); }
+        else { floatPanel.hidden = true; floatBtn.setAttribute('aria-expanded','false'); }
+      });
+      // form prevent default
+      document.getElementById('contactForm').addEventListener('submit', (e) => e.preventDefault());
+    })();
+  </script>
+</body>
 </html>
