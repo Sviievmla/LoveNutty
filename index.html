@@ -346,6 +346,13 @@
       max-width: 600px;
     }
 
+    .hero-tags-2026 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+      margin: 2rem 0 2.5rem;
+    }
+
     .hero-tags-2026 span {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(8px);
@@ -495,7 +502,7 @@
       margin-bottom: 1.5rem;
     }
 
-    /* ===== REST OF YOUR ORIGINAL SECTIONS (unchanged) ===== */
+    /* ===== REST OF YOUR ORIGINAL SECTIONS ===== */
     .section {
       padding: 6rem 0;
     }
@@ -913,6 +920,20 @@
         display: none;
       }
       
+      .site-nav.open {
+        display: flex;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--glass-3);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1rem;
+        box-shadow: var(--shadow-lg);
+      }
+      
       .menu-btn {
         display: block;
       }
@@ -991,86 +1012,4 @@
               <stop offset="1" stop-color="#2b7a62"/>
             </linearGradient>
           </defs>
-        </svg>
-        <span class="logo-main">House of Healthy Foods</span>
-      </a>
-
-      <nav class="site-nav">
-        <a href="#" class="active">Начало</a>
-        <a href="#">Продукти</a>
-        <a href="#">Фермата</a>
-        <a href="#">За нас</a>
-        <a href="#">Контакти</a>
-      </nav>
-
-      <div style="display: flex; align-items: center;">
-        <span class="lang-switch">EN</span>
-        <button class="menu-btn" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero with YouTube background - FIXED BLACK BACKGROUND -->
-    <section class="hero-2026">
-      <!-- YouTube Background - FORCED TO COVER -->
-      <div class="hero-bg-2026">
-        <div class="youtube-background">
-          <iframe 
-            src="https://www.youtube.com/embed/15pkbgK8HJs?autoplay=1&mute=1&loop=1&playlist=15pkbgK8HJs&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&playsinline=1" 
-            title="Hazelnut Farm Background"
-            allow="autoplay; encrypted-media"
-            referrerpolicy="strict-origin-when-cross-origin">
-          </iframe>
-        </div>
-      </div>
-      
-      <!-- Minimal overlay for text readability -->
-      <div class="hero-gradient-overlay"></div>
-
-      <!-- FLYING NUTS - EXACTLY FROM FIRST CODE -->
-      <div class="flying-nuts">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%238B5A2B'/%3E%3Ccircle cx='35' cy='35' r='8' fill='%23A67C52'/%3E%3Ccircle cx='65' cy='40' r='8' fill='%23A67C52'/%3E%3Ccircle cx='45' cy='65' r='8' fill='%23A67C52'/%3E%3C/svg%3E" class="flying-nut" alt="Flying hazelnut">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%238B5A2B'/%3E%3Ccircle cx='35' cy='35' r='8' fill='%23A67C52'/%3E%3Ccircle cx='65' cy='40' r='8' fill='%23A67C52'/%3E%3Ccircle cx='45' cy='65' r='8' fill='%23A67C52'/%3E%3C/svg%3E" class="flying-nut" alt="Flying hazelnut">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%238B5A2B'/%3E%3Ccircle cx='35' cy='35' r='8' fill='%23A67C52'/%3E%3Ccircle cx='65' cy='40' r='8' fill='%23A67C52'/%3E%3Ccircle cx='45' cy='65' r='8' fill='%23A67C52'/%3E%3C/svg%3E" class="flying-nut" alt="Flying hazelnut">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%238B5A2B'/%3E%3Ccircle cx='35' cy='35' r='8' fill='%23A67C52'/%3E%3Ccircle cx='65' cy='40' r='8' fill='%23A67C52'/%3E%3Ccircle cx='45' cy='65' r='8' fill='%23A67C52'/%3E%3C/svg%3E" class="flying-nut" alt="Flying hazelnut">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%238B5A2B'/%3E%3Ccircle cx='35' cy='35' r='8' fill='%23A67C52'/%3E%3Ccircle cx='65' cy='40' r='8' fill='%23A67C52'/%3E%3Ccircle cx='45' cy='65' r='8' fill='%23A67C52'/%3E%3C/svg%3E" class="flying-nut" alt="Flying hazelnut">
-      </div>
-
-      <!-- Floating orbs -->
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-
-      <div class="container hero-grid-2026">
-        <div class="hero-text-2026">
-          <div class="eyebrow">LOVE NUTTY · THE HAZELNUT FARM</div>
-          <h1>
-            <span class="gradient-text-2026">2026</span><br>
-            Bio‑Future<br>
-            в лесников рай
-          </h1>
-          <p class="hero-lead">
-            От биологичната ферма до вашата трапеза – чисти, 
-            устойчиви и невероятно вкусни продукти от лешници.
-          </p>
-          <div class="hero-tags-2026">
-            <span>Био сертификат</span>
-            <span>Zero Waste</span>
-            <span>Въглеродно неутрални</span>
-          </div>
-          <button class="btn">Разгледай продуктите →</button>
-        </div>
-        <div></div>
-      </div>
-    </section>
-
-    <!-- ALL OTHER SECTIONS - EXACTLY AS YOUR ORIGINAL CODE -->
-    <!-- ... (all sections from your original code remain exactly the same) ... -->
-  </main>
-</body>
-</html>
+        </svg
